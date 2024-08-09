@@ -6,6 +6,9 @@
     [clj-reload.core :as reload]
     [duti.core :as duti]))
 
+(when-let [start-nrepl! (requiring-resolve 'jarrett.common-nrepl/start-server!)]
+  (start-nrepl!))
+
 (reload/init
   {:dirs ["src" "dev" "test"]
    :no-reload '#{user
